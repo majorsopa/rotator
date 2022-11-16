@@ -1,4 +1,3 @@
-#include <iostream>
 #include "verifier.h"
 
 int main() {

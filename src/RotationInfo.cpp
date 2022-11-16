@@ -11,22 +11,22 @@ RotationInfo::RotationInfo(int x, int y, int z, int rotation, bool is_side) {
     }
 }
 
-int RotationInfo::get_x() {
+int RotationInfo::get_x() const {
     return x;
 }
 
-int RotationInfo::get_y() {
+int RotationInfo::get_y() const {
     return y;
 }
 
-int RotationInfo::get_z() {
+int RotationInfo::get_z() const {
     return z;
 }
 
-int RotationInfo::get_rotation() {
+int RotationInfo::get_rotation() const {
     return rotation;
 }
 
-bool RotationInfo::get_is_side() {
+bool RotationInfo::get_is_side() const {
     return is_side;
 }

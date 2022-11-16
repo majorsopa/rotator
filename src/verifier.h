@@ -2,13 +2,10 @@
 
 #include <iostream>
 #include "textures/Texture.h"
-#include "textures/VanillaTexture.h"
-#include "textures/SodiumTexture.h"
-#include "textures/SodiumTexture19.h"
 
 
 bool vanilla_tests() {
-    auto provider = std::make_unique<VanillaTexture>();
+    auto provider = std::make_unique<Texture>(TextureType::VANILLA);
     bool passed = true;
     if (provider->get_texture(-1, 0, -1, 4) != 0) {
         std::cout << "fail at `-1 0 -1" << std::endl;
@@ -117,7 +114,7 @@ bool vanilla_tests() {
 }
 
 bool sodium_tests() {
-    auto provider = std::make_unique<SodiumTexture>();
+    auto provider = std::make_unique<Texture>(TextureType::SODIUM);
     bool passed = true;
     if (provider->get_texture(0, -56, 0, 4) != 3) {
         std::cout << "fail at `0 -56 0" << std::endl;
@@ -237,20 +234,8 @@ bool sodium_tests() {
 }
 
 bool sodium19_tests() {
-    auto provider = std::make_shared<SodiumTexture19>();
+    auto provider = std::make_unique<Texture>(TextureType::SODIUM19);
     bool passed = true;
-    /*
-     * if (sodium19.getTexture(0,-61,0, 4) != 1) System.out.println("fail at 0 -61 0");
-        if (sodium19.getTexture(1,-61,0, 4) != 1) System.out.println("fail at 1 -61 0");
-        if (sodium19.getTexture(2,-61,0, 4) != 0) System.out.println("fail at 2 -61 0");
-        if (sodium19.getTexture(3,-61,0, 4) != 2) System.out.println("fail at 3 -61 0");
-        if (sodium19.getTexture(4,-61,0, 4) != 0) System.out.println("fail at 4 -61 0");
-        if (sodium19.getTexture(5,-61,0, 4) != 3) System.out.println("fail at 5 -61 0");
-        if (sodium19.getTexture(6,-61,0, 4) != 1) System.out.println("fail at 6 -61 0");
-        if (sodium19.getTexture(7,-61,0, 4) != 2) System.out.println("fail at 7 -61 0");
-        if (sodium19.getTexture(8,-61,0, 4) != 2) System.out.println("fail at 8 -61 0");
-        if (sodium19.getTexture(9,-61,0, 4) != 1) System.out.println("fail at 9 -61 0");
-     */
     if (provider->get_texture(0, -61, 0, 4) != 1) {
         std::cout << "fail at `0 -61 0" << std::endl;
         passed = false;
