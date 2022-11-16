@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../verifier.h"
+#include "verifier.h"
 
 int main() {
     run_verification();
