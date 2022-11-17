@@ -3,7 +3,6 @@ RotationInfo::RotationInfo(int x, int y, int z, int rotation, bool is_side) {
     this->x = x;
     this->y = y;
     this->z = z;
-    this->is_side = is_side;
     if (is_side) {
         this->rotation = rotation%2;
     } else {
@@ -25,8 +24,4 @@ int RotationInfo::get_z() const {
 
 int RotationInfo::get_rotation() const {
     return rotation;
-}
-
-bool RotationInfo::get_is_side() const {
-    return is_side;
 }

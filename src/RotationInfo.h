@@ -9,13 +9,11 @@ public:
     int get_y() const;
     int get_z() const;
     int get_rotation() const;
-    bool get_is_side() const;
 private:
     int x;
     int y;
     int z;
     int rotation;
-    bool is_side;
 };
 
 
