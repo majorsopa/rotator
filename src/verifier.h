@@ -1,7 +1,7 @@
 // todo: make proper unit tests
 
 #include <iostream>
-#include "textures/Texture.h"
+#include "Texture.h"
 
 
 bool vanilla_tests() {

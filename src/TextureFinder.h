@@ -4,11 +4,11 @@
 
 #include <vector>
 #include "RotationInfo.h"
-#include "textures/Texture.h"
+#include "Texture.h"
 
 class TextureFinder {
 public:
-    TextureFinder(const std::string& in, int start_x, int end_x, int start_y, int end_y, int start_z, int end_z, Texture *textureProvider);
+    TextureFinder(const std::string& in, int start_x, int end_x, int start_y, int end_y, int start_z, int end_z, Texture * textureProvider);
     ~TextureFinder();
     void run();
 private:

@@ -1,6 +1,7 @@
 #include <iostream>
 #include "TextureFinder.h"
 #include "csv.hpp"
+#include "texture_getter.cuh"
 
 
 std::pair<std::vector<RotationInfo>, std::vector<RotationInfo>> get_rotation_info(const std::string & in) {
@@ -62,6 +63,16 @@ void TextureFinder::run() {
         return;
     }
 
+    int total_x = end_x - start_x;
+    if (total_x < 0) total_x *= -1;
+    int total_y = end_y - start_y;
+    if (total_y < 0) total_y *= -1;
+    int total_z = end_z - start_z;
+    if (total_z < 0) total_z *= -1;
+
+    run_texture_getter(*texture_provider, tops_and_bottoms, sides, start_x, end_x, start_y, end_y, start_z, end_z);
+
+    /*
     for (int x = start_x; x <= end_x; x++) {
         for (int z = start_z; z <= end_z; z++) {
             for (int y = start_y; y <= end_y; y++) {
@@ -92,4 +103,5 @@ void TextureFinder::run() {
             goto_continue:;
         }
     }
+    */
 }

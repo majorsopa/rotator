@@ -1,0 +1,1 @@
+void run_texture_getter(Texture texture_provider, std::vector<RotationInfo> tops_and_bottoms, std::vector<RotationInfo> sides, int start_x, int end_x, int start_y, int end_y, int start_z, int end_z);
