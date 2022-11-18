@@ -1,0 +1,10 @@
+#ifndef ROTATOR_TEXTURETYPE_H
+#define ROTATOR_TEXTURETYPE_H
+
+enum TextureType {
+    VANILLA,
+    SODIUM,
+    SODIUM19
+};
+
+#endif //ROTATOR_TEXTURETYPE_H
