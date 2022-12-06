@@ -55,7 +55,6 @@ TextureFinder::~TextureFinder() {
 
 void TextureFinder::run() {
     // todo: add a elapsed time counter
-    // todo: parallelize this with CUDA
 
     if (tops_and_bottoms.size() + sides.size() == 0) {
         std::cout << "no rotations entered" << std::endl;
