@@ -1,5 +1,6 @@
 .idea
 cmake-build-debug-test
+cmake-build-debug
 .vscode
 build
 CMakeFiles
