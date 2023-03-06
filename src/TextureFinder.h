@@ -8,7 +8,7 @@
 
 class TextureFinder {
 public:
-    TextureFinder(const std::string& in, int start_x, int end_x, int start_y, int end_y, int start_z, int end_z, Texture * textureProvider);
+    TextureFinder(const std::pair<std::vector<RotationInfo>, std::vector<RotationInfo>>& rotation_info, int start_x, int end_x, int start_y, int end_y, int start_z, int end_z, Texture * texture_provider);
     ~TextureFinder();
     void run();
 private:

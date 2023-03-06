@@ -1,40 +1,8 @@
 #include <iostream>
 #include "TextureFinder.h"
-#include "csv.hpp"
 
 
-std::pair<std::vector<RotationInfo>, std::vector<RotationInfo>> get_rotation_info(const std::string & in) {
-    std::vector<RotationInfo> tops_and_bottoms;
-    std::vector<RotationInfo> sides;
-
-
-    try {
-        csv::CSVReader reader(in);
-        for (csv::CSVRow & row : reader) {
-            int x = row["x"].get<int>();
-            int y = row["y"].get<int>();
-            int z = row["z"].get<int>();
-            int rotation = row["rotation"].get<int>();
-            bool is_side;
-            std::istringstream(row["is_side"].get<std::string>()) >> is_side;
-            RotationInfo rotation_info = RotationInfo(x, y, z, rotation, is_side);
-            if (is_side) {
-                sides.push_back(rotation_info);
-            } else {
-                tops_and_bottoms.push_back(rotation_info);
-            }
-        }
-    } catch (const std::exception & e) {
-        std::cout << e.what() << std::endl;
-        exit(2);
-    }
-
-
-
-    return std::make_pair(tops_and_bottoms, sides);
-}
-
-TextureFinder::TextureFinder(const std::string & in, int start_x, int end_x, int start_y, int end_y, int start_z, int end_z, Texture * textureProvider)
+TextureFinder::TextureFinder(const std::pair<std::vector<RotationInfo>, std::vector<RotationInfo>>& rotation_info, int start_x, int end_x, int start_y, int end_y, int start_z, int end_z, Texture * texture_provider)
 {
     this->start_x = start_x;
     this->end_x = end_x;
@@ -42,9 +10,8 @@ TextureFinder::TextureFinder(const std::string & in, int start_x, int end_x, int
     this->end_y = end_y;
     this->start_z = start_z;
     this->end_z = end_z;
-    this->texture_provider = textureProvider;
+    this->texture_provider = texture_provider;
 
-    auto rotation_info = get_rotation_info(in);
     this->tops_and_bottoms = rotation_info.first;
     this->sides = rotation_info.second;
 }
