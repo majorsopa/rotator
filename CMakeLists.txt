@@ -4,9 +4,6 @@ project(rotator)
 set(CMAKE_CXX_STANDARD 23)
 set(SRC src/main.cpp src/RotationInfo.cpp src/RotationInfo.h src/Texture.h src/TextureFinder.cpp src/TextureFinder.h src/verifier.h src/TextureType.h src/Texture.cpp)
 
-set(CMAKE_BUILD_TYPE Release)
-set(CMAKE_CXX_FLAGS_RELEASE "-O3")
-
 set(CSVPARSER_DIR ${CMAKE_SOURCE_DIR}/external/lib/csvparser)
 if(NOT EXISTS ${CSVPARSER_DIR})
     find_package(Git REQUIRED)
