@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
 
         std::cout << start_x << " " << end_x << " " << start_y << " " << end_y << " " << start_z << " " << end_z << std::endl;
 
-        TextureFinder texture_finder = TextureFinder(argv[1], start_x, end_x, start_y, end_y, start_z, end_z, new Texture(TextureType::VANILLA));
+        TextureFinder texture_finder = TextureFinder(argv[1], start_x, end_x, start_y, end_y, start_z, end_z, new Texture(TextureType::SODIUM19));
         texture_finder.run();
         std::cout << "done" << std::endl;
     }

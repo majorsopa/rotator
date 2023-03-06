@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.23)
-project(rotator LANGUAGES CXX CUDA)
+project(rotator)
 
 set(CMAKE_CXX_STANDARD 23)
 set(SRC src/main.cpp src/RotationInfo.cpp src/RotationInfo.h src/Texture.h src/TextureFinder.cpp src/TextureFinder.h src/verifier.h src/TextureType.h src/Texture.cpp)
